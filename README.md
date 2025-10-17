@@ -1,70 +1,84 @@
-# GPS
 # Sistema GPS IoT con ESP32  
-Proyecto desarrollado en Visual Studio Code (PlatformIO / Arduino)
-
-## Descripción General
-Este proyecto implementa un sistema IoT basado en ESP32 integrado con un módulo GPS (GNSS) para obtener y transmitir datos geoespaciales en tiempo real. El dispositivo captura y muestra información como latitud, longitud, altitud, velocidad, número de satélites, calidad de la señal y hora UTC. Además, permite enviar esta información a un servicio en la nube mediante Wi-Fi.
-
-El objetivo es demostrar la integración entre hardware embebido, sensores de geolocalización y comunicación con servicios externos mediante protocolos HTTP o MQTT.
+Proyecto desarrollado en Visual Studio Code (PlatformIO / Arduino Framework)
 
 ---
 
-## Objetivos del Proyecto
+## 📌 Descripción General
+Este proyecto implementa un sistema IoT utilizando un ESP32 integrado con un módulo GPS (GNSS). Su propósito es capturar datos geográficos en tiempo real y procesarlos para su visualización local y transmisión hacia la nube.  
+El dispositivo obtiene latitud, longitud, altitud, velocidad, precisión y estado del fix satelital, mostrando dicha información en un display OLED y exportándola como JSON.
+
+---
+
+## 🎯 Objetivos del Proyecto
 
 ### Objetivo General
-Desarrollar un dispositivo IoT que obtenga datos de geolocalización desde un módulo GPS y los transmita hacia una plataforma en la nube para su monitoreo o análisis.
+Desarrollar un sistema embebido capaz de obtener datos GPS y transmitirlos a una plataforma remota mediante Wi-Fi.
 
 ### Objetivos Específicos
-- Capturar datos GPS y procesarlos en tiempo real.
-- Visualizar la información en un display OLED.
-- Enviar lecturas mediante Wi-Fi a un endpoint o servicio en la nube.
-- Documentar y estructurar el sistema para su réplica y mantenimiento.
+- Procesar tramas NMEA desde un módulo GPS.
+- Visualizar datos en un display OLED.
+- Enviar información en formato JSON hacia un servicio en la nube.
+- Documentar la arquitectura, pruebas y funcionamiento exitoso del sistema.
 
 ---
 
-## Funcionalidades Implementadas
-- Lectura de tramas NMEA mediante UART.
-- Extracción de:
-  - Latitud y Longitud (grados decimales)
-  - Altitud (m)
-  - Velocidad (m/s y km/h)
-  - Rumbo o dirección (°)
-  - Fecha y hora UTC del fix
-  - Número de satélites en uso
-  - Calidad del fix (2D/3D)
-  - HDOP (precisión horizontal)
-- Visualización en pantalla OLED (SSD1306)
-- Envío de datos en formato JSON a la nube
-- Reintento automático de conexión Wi-Fi
-- Posibilidad de recibir comandos desde la nube (opcional)
+## ⚙️ Funcionalidades Implementadas
+- Lectura por UART de GPS (TinyGPS++)  
+- Obtención de:
+  - Latitud / Longitud (grados decimales)  
+  - Altitud (m)  
+  - Velocidad (km/h)  
+  - Rumbo (°)  
+  - Fecha y hora UTC  
+  - Satélites en uso  
+  - HDOP (precisión) y tipo de fix (2D/3D)  
+- Visualización dinámica en OLED SSD1306  
+- Envío de datos vía Wi-Fi (HTTP REST o servidor local)  
+- Manejo de reconexión Wi-Fi y control de errores  
 
 ---
 
-## Componentes del Sistema
+## 🛑 Validación y Resultados del Funcionamiento
+
+Durante las pruebas finales:
+
+| Prueba | Resultado |
+|--------|----------|
+| Recepción de señal GPS | Coordenadas reales obtenidas con precisión |
+| Visualización OLED | Datos mostrados correctamente y en tiempo real |
+| Envío a la nube / servidor | Payload JSON recibido correctamente |
+| Reconexión Wi-Fi | Reconexión automática sin reiniciar el sistema |
+
+El sistema **funcionó correctamente**, validando la integración entre hardware, firmware y comunicación remota.
+
+---
+
+## 🧩 Componentes del Sistema
 
 ### Hardware
-- ESP32 DevKit
-- Módulo GPS GNSS (u-blox NEO-6M / NEO-M8N o similar)
-- Display OLED SSD1306 (I2C)
-- Antena GPS y cables Dupont
-- Fuente de 5V o alimentación USB
+| Componente | Detalle |
+|------------|---------|
+| ESP32 DevKit | Microcontrolador principal |
+| Módulo GPS (u-blox NEO-6M/M8N) | Fuente de datos GNSS |
+| OLED SSD1306 (I2C) | Pantalla 128x64 |
+| Antena GPS | Recepción satelital |
+| Cableado Dupont | Conexiones |
 
 ### Software y Librerías
-| Componente | Uso |
-|------------|-----------------------------|
-| VSCode + PlatformIO | Desarrollo y carga de firmware |
-| TinyGPS++ | Parseo de datos NMEA |
-| WiFi.h / HTTPClient.h | Conexión Wi-Fi y envío a servicios |
-| ArduinoJson | Construcción de payload JSON |
-| Adafruit_SSD1306 | Visualización en OLED |
-| Wire.h (I2C) | Comunicación con pantalla |
+| Librería | Uso |
+|----------|-----|
+| TinyGPS++ | Parseo de tramas NMEA |
+| WiFi.h / HTTPClient.h | Comunicación Wi-Fi y HTTP |
+| Adafruit_SSD1306 / GFX | Display OLED |
+| ArduinoJson | Construcción de JSON |
+| PlatformIO / VSCode | Entorno de desarrollo |
 
 ---
 
-## Diagrama de Conexión (Resumen)
+## 🔌 Diagrama de Conexión (Resumen)
 
-| Componente | ESP32 |
-|------------|-----------------|
+| GPS / OLED | ESP32 |
+|------------|------|
 | GPS TX | GPIO16 (RX2) |
 | GPS RX | GPIO17 (TX2) |
 | GPS VCC | 3.3V o 5V |
@@ -76,67 +90,60 @@ Desarrollar un dispositivo IoT que obtenga datos de geolocalización desde un m�
 
 ---
 
-## Estructura del Repositorio
+## 📂 Estructura del Proyecto (VSCode)
 
-gps-esp32-project/
-├── README.md
-├── firmware/
-│ ├── src/
-│ │ ├── main.cpp
-│ │ ├── gps_handler.cpp
-│ │ ├── display.cpp
-│ │ ├── wifi_client.cpp
-│ │ └── config.h.example
-│ ├── lib/
-│ └── platformio.ini
+/Proyecto_GPS_ESP32/
+├── src/
+│ ├── main.cpp
+│ ├── gps_handler.cpp
+│ ├── display.cpp
+│ ├── wifi_client.cpp
+│ └── config.h
+├── include/
+├── lib/
+├── platformio.ini
 ├── docs/
-│ ├── circuit.png
-│ ├── demo.mp4
-│ └── screenshots/
-└── tests/
+│ ├── circuito.png
+│ └── pruebas.mp4
+└── README.md
 
 yaml
 Copiar código
 
 ---
 
-## Instalación y Configuración
+## 🚀 Ejecución y Carga del Firmware
 
-### 1. Clonar repositorio
-```bash
-git clone <url-del-repositorio>
-cd gps-esp32-project/firmware
-2. Configurar Wi-Fi y Endpoint
-Crear config.h basado en config.h.example:
-
-c
-Copiar código
-#define WIFI_SSID   "TU_SSID"
-#define WIFI_PASS   "TU_PASSWORD"
-#define CLOUD_ENDPOINT "https://tu-backend.com/api/gps"
+### 1️⃣ Configurar Wi-Fi y Endpoint en `config.h`
+```c
+#define WIFI_SSID       "TU_SSID"
+#define WIFI_PASS       "TU_PASSWORD"
+#define CLOUD_ENDPOINT  "http://tu-servidor.com/api/gps"
 #define SEND_INTERVAL_MS 60000
+2️⃣ Compilar y Cargar (desde VSCode con PlatformIO)
+Conectar ESP32 por USB
 
-#define GPS_UART_NUM 2
-#define GPS_RX_PIN 16
-#define GPS_TX_PIN 17
-3. Compilar y Cargar
-bash
+Abrir proyecto en VSCode
+
+Click en Build → Upload o usar:
+
+makefile
 Copiar código
-pio run -t upload
-Flujo del Firmware
-Inicialización de Serial, GPS, Wi-Fi y OLED.
+PlatformIO: Upload
+🔁 Flujo del Firmware
+Inicialización de Serial, GPS, Wi-Fi y OLED
 
-Intento de conexión Wi-Fi.
+Intento de conexión Wi-Fi
 
-Lectura continua de datos NMEA desde GPS.
+Lectura continua de datos GPS (NMEA)
 
-Construcción de JSON con datos válidos.
+Generación de JSON con los datos obtenidos
 
-Envío a la nube cada SEND_INTERVAL_MS.
+Envío periódico (intervalo configurado)
 
-Muestreo concurrente en OLED y Serial Monitor.
+Visualización en OLED y salida por Serial Monitor
 
-Ejemplo de Payload JSON
+🗂 Ejemplo de Payload JSON
 json
 Copiar código
 {
@@ -154,29 +161,20 @@ Copiar código
     "fix_type": "3D"
   }
 }
-Pruebas Realizadas
-Prueba	Resultado
-GPS sin señal	Reporte fix=false
-Reconexión Wi-Fi	Reintento automático
-Envío HTTP	Payload aceptado
-Visual OLED	Cambio de pantallas correcto
-
-Problemas y Soluciones
+🧪 Problemas y Soluciones
 Problema	Solución
-Pérdida de señal GPS	Antena externa / exterior
-Errores TLS al enviar	Uso de HTTP o CA correcta
-Bajo heap con JSON	StaticJsonDocument optimizado
+Pérdida de señal GPS	Uso en exteriores / antena externa
+Error TLS en envío	Uso de HTTP o certificado compatible
+Bajo heap con JSON	Uso de StaticJsonDocument
 
-Mejoras Futuras
-Soporte MQTT para comandos remotos
+🔮 Mejoras Futuras
+Integración con MQTT (sub/pub)
 
-Dashboard en tiempo real con mapa
+Dashboard web con mapa (Leaflet/Mapbox)
 
-Almacenamiento local (LittleFS)
+Almacenamiento con LittleFS
 
-OTA (actualización remota)
+Actualizaciones OTA (Over-The-Air)
 
-Créditos
-Autor: [Tu Nombre] — Ingeniero de Sistemas
-Librerías utilizadas: TinyGPS++, ArduinoJson, Adafruit_SSD1306, Espressif Arduino Core
-Licencia: MIT (o seleccionar)
+
+
