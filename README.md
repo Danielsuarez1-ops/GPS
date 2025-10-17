@@ -114,8 +114,9 @@ Copiar código
 
 ## 🚀 Ejecución y Carga del Firmware
 
-## 1️⃣ Configurar Wi-Fi y Endpoint en `config.h`
+### 1️⃣ Configurar Wi-Fi y Endpoint en `config.h`
 
+```c
 #define WIFI_SSID       "TU_SSID"
 #define WIFI_PASS       "TU_PASSWORD"
 #define CLOUD_ENDPOINT  "http://tu-servidor.com/api/gps"
@@ -125,7 +126,7 @@ Conectar ESP32 por USB
 
 Abrir proyecto en VSCode
 
-Click en Build → Upload o usar:
+Compilar y cargar utilizando:
 
 makefile
 Copiar código
@@ -147,7 +148,7 @@ Visualización en OLED y salida por Serial Monitor
 json
 Copiar código
 {
-  "device_id": "ESP32-GPS-01",
+  "device_id": "ESP32-GPS",
   "timestamp_utc": "2025-10-14T12:34:56Z",
   "gps": {
     "fix": true,
@@ -162,24 +163,25 @@ Copiar código
   }
 }
 
----
-
-## Problemas y Soluciones
-
-| Problema | Solución |
-|----------|----------|
-| Pérdida de señal GPS | Uso en exteriores / antena externa |
-| Error TLS en envío | Uso de HTTP o certificado compatible |
-| Bajo heap con JSON | Uso de `StaticJsonDocument` optimizado |
 
 ---
 
-## Mejoras Futuras
+✅ Problemas y Soluciones
 
-- Integración con protocolo MQTT (sub/pub)
-- Dashboard web con visualización de mapa (Leaflet o Mapbox)
-- Almacenamiento local usando LittleFS o SPIFFS
-- Implementación de actualizaciones OTA (Over-The-Air)
+Problema	Solución
+Pérdida de señal GPS	Uso en exteriores / antena externa
+Error TLS en envío	Uso de HTTP o certificado compatible
+Bajo heap con JSON	Uso de StaticJsonDocument optimizado
+
+🔮 Mejoras Futuras
+
+Integración con protocolo MQTT (sub/pub)
+
+Dashboard web con visualización de mapa (Leaflet o Mapbox)
+
+Almacenamiento local usando LittleFS o SPIFFS
+
+Implementación de actualizaciones OTA (Over-The-Air)
 
 
 
