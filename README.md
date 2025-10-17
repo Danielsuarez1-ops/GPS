@@ -117,16 +117,8 @@ Copiar código
 ### 1️⃣ Configurar Wi-Fi y Endpoint en `config.h`
 
 ```c
-#define WIFI_SSID       "TU_SSID"
-#define WIFI_PASS       "TU_PASSWORD"
-#define CLOUD_ENDPOINT  "http://tu-servidor.com/api/gps"
-#define SEND_INTERVAL_MS 60000
-2️⃣ Compilar y Cargar (desde VSCode con PlatformIO)
-Conectar ESP32 por USB
 
-Abrir proyecto en VSCode
-
-Compilar y cargar utilizando:
+Compilar y cargar:
 
 makefile
 Copiar código
@@ -161,10 +153,11 @@ Copiar código
     "hdop": 0.9,
     "fix_type": "3D"
   }
-}
+}```
 
 
 ---
+## 🚀 Ejecución y Carga del Firmware
 
 ✅ Problemas y Soluciones
 
