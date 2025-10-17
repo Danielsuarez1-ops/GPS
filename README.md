@@ -165,6 +165,8 @@ Pérdida de señal GPS	Uso en exteriores / antena externa
 Error TLS en envío	Uso de HTTP o certificado compatible
 Bajo heap con JSON	Uso de StaticJsonDocument optimizado
 
+---
+
 🔮 Mejoras Futuras
 
 Integración con protocolo MQTT (sub/pub)
