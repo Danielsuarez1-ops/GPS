@@ -114,8 +114,8 @@ Copiar código
 
 ## 🚀 Ejecución y Carga del Firmware
 
-### 1️⃣ Configurar Wi-Fi y Endpoint en `config.h`
-```c
+## 1️⃣ Configurar Wi-Fi y Endpoint en `config.h`
+
 #define WIFI_SSID       "TU_SSID"
 #define WIFI_PASS       "TU_PASSWORD"
 #define CLOUD_ENDPOINT  "http://tu-servidor.com/api/gps"
@@ -162,10 +162,9 @@ Copiar código
   }
 }
 
-
 ---
 
-## 🧪 Problemas y Soluciones
+## Problemas y Soluciones
 
 | Problema | Solución |
 |----------|----------|
@@ -175,12 +174,15 @@ Copiar código
 
 ---
 
-## 🔮 Mejoras Futuras
+## Mejoras Futuras
 
 - Integración con protocolo MQTT (sub/pub)
 - Dashboard web con visualización de mapa (Leaflet o Mapbox)
 - Almacenamiento local usando LittleFS o SPIFFS
 - Implementación de actualizaciones OTA (Over-The-Air)
+
+
+
 
 
 
