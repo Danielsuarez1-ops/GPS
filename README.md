@@ -157,7 +157,6 @@ Copiar código
 
 
 ---
-## 🚀 Ejecución y Carga del Firmware
 
 ✅ Problemas y Soluciones
 
