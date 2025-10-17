@@ -161,6 +161,10 @@ Copiar código
     "fix_type": "3D"
   }
 }
+
+
+---
+
 🧪 Problemas y Soluciones
 Problema	Solución
 Pérdida de señal GPS	Uso en exteriores / antena externa
