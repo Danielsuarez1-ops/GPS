@@ -165,20 +165,22 @@ Copiar código
 
 ---
 
-🧪 Problemas y Soluciones
-Problema	Solución
-Pérdida de señal GPS	Uso en exteriores / antena externa
-Error TLS en envío	Uso de HTTP o certificado compatible
-Bajo heap con JSON	Uso de StaticJsonDocument
+## 🧪 Problemas y Soluciones
 
-🔮 Mejoras Futuras
-Integración con MQTT (sub/pub)
+| Problema | Solución |
+|----------|----------|
+| Pérdida de señal GPS | Uso en exteriores / antena externa |
+| Error TLS en envío | Uso de HTTP o certificado compatible |
+| Bajo heap con JSON | Uso de `StaticJsonDocument` optimizado |
 
-Dashboard web con mapa (Leaflet/Mapbox)
+---
 
-Almacenamiento con LittleFS
+## 🔮 Mejoras Futuras
 
-Actualizaciones OTA (Over-The-Air)
+- Integración con protocolo MQTT (sub/pub)
+- Dashboard web con visualización de mapa (Leaflet o Mapbox)
+- Almacenamiento local usando LittleFS o SPIFFS
+- Implementación de actualizaciones OTA (Over-The-Air)
 
 
 
