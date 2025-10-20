@@ -114,6 +114,9 @@ Copiar código
 
 ## 🚀 Ejecución y Carga del Firmware
 
+<img width="332" height="592" alt="image" src="https://github.com/user-attachments/assets/ebfce073-35d2-4019-996c-bc5ec2e4194c" />
+
+
 ### 1️⃣ Configurar Wi-Fi y Endpoint en `config.h`
 
 ```c
@@ -155,7 +158,6 @@ Copiar código
   }
 }```
 
-<img width="332" height="592" alt="image" src="https://github.com/user-attachments/assets/ebfce073-35d2-4019-996c-bc5ec2e4194c" />
 
 ---
 
