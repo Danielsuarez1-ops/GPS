@@ -155,7 +155,7 @@ Copiar código
   }
 }```
 
-[WhatsApp Image 2025-10-17 at 6 58 43 PM](https://github.com/user-attachments/assets/c86834c7-e3fe-4559-a2e3-f05e5312c081)
+<img width="332" height="592" alt="image" src="https://github.com/user-attachments/assets/ebfce073-35d2-4019-996c-bc5ec2e4194c" />
 
 ---
 
