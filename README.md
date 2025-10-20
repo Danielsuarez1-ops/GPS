@@ -36,7 +36,7 @@ Desarrollar un sistema embebido capaz de obtener datos GPS y transmitirlos a una
 - Envío de datos vía Wi-Fi (HTTP REST o servidor local)  
 - Manejo de reconexión Wi-Fi y control de errores
 
-  <img width="387" height="688" alt="image" src="https://github.com/user-attachments/assets/b6daea26-891a-4edb-9c16-9aaf181539db" />
+<img width="350" height="602" alt="image" src="https://github.com/user-attachments/assets/b6d078d0-0390-47fb-8200-20f4bbcc3d8f" />
 
 
 ---
