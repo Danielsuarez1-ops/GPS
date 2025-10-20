@@ -34,7 +34,10 @@ Desarrollar un sistema embebido capaz de obtener datos GPS y transmitirlos a una
   - HDOP (precisión) y tipo de fix (2D/3D)  
 - Visualización dinámica en OLED SSD1306  
 - Envío de datos vía Wi-Fi (HTTP REST o servidor local)  
-- Manejo de reconexión Wi-Fi y control de errores  
+- Manejo de reconexión Wi-Fi y control de errores
+
+  <img width="387" height="688" alt="image" src="https://github.com/user-attachments/assets/b6daea26-891a-4edb-9c16-9aaf181539db" />
+
 
 ---
 
